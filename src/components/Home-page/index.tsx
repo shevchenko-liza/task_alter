@@ -1,32 +1,46 @@
-import { generatePath, Link, useParams } from "react-router-dom";
-import React from 'react';
-import classes from './styles.module.scss'
-import { AppBar, Container, Toolbar, Typography } from "@mui/material";
+import { generatePath, Link } from "react-router-dom";
+
+import { AppBar, createTheme, ThemeProvider, Toolbar, Typography } from "@mui/material";
 
 export const Home = () => {
-
+    const theme = createTheme({
+        components: {
+            MuiTypography: {
+                variants: [
+                    {
+                        props: {
+                            variant: 'body2'
+                        },
+                        style: {
+                            fontSize: 25
+                        }
+                    }
+                ]
+            }
+        }
+    })
     return (
-        <div>
-            <AppBar>
-                <Toolbar className={classes.block}  >
-                    <Link to={"/"}>
-                        <Typography variant="h4" >
+        <AppBar>
+            <ThemeProvider theme={theme}>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-around', backgroundColor: '#3A5041', height: '80px' }}  >
+                    <Link style={{ textDecoration: 'none', color: 'white' }} to={"/"}>
+                        <Typography variant="body2" >
                             Homes
                         </Typography>
                     </Link>
-                    <Link to={"/news"}>
-                        <Typography variant="h4" >
+                    <Link style={{ textDecoration: 'none', color: 'white' }} to={"/news"}>
+                        <Typography variant="body2" >
                             News
                         </Typography>
                     </Link>
-                    <Typography variant="h4" >
+                    <Typography variant="body2" >
                         Profile
                     </Typography>
-                    <Typography variant="h4" >
+                    <Typography variant="body2" >
                         News
                     </Typography>
                 </Toolbar>
-            </AppBar>
-        </div>
+            </ThemeProvider>
+        </AppBar>
     )
 }
