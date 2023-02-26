@@ -4,6 +4,7 @@ import React from "react";
 import { FC, useCallback, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { CATALOG, catalogSlice, Posts } from "../../store/slices/catalog";
+import { User } from "../User";
 
 export const Delet: FC<Pick<Posts, 'id'>> = ({ id }) => {
   const dispatch = useDispatch()
@@ -37,15 +38,15 @@ export const News = () => {
     color: theme.palette.text.secondary,
     height: '170px'
   }));
-  
-  function FormRow() {
+
+  const FormRow = () => {
     return (
       <React.Fragment>
         {catalog.slice(0, visible).map((item, id) => (
           <Grid item xs={4}>
             <Item>
               <Button sx={{ display: 'flex', marginLeft: 'auto', marginBottom: '-20px' }}  >
-                <Delet id={id} />
+                <Delet id={item.id} />
               </Button>
               <Typography style={{ display: 'none' }} key={item.id}>{item.id}</Typography>
               <Typography >{item.id}</Typography>
@@ -65,6 +66,7 @@ export const News = () => {
         </Grid>
       </Grid>
     </Container>
+
   )
 }
 
