@@ -1,25 +1,22 @@
-import React, { FC } from 'react'
-import { useSelector } from 'react-redux';
-import { redirect} from 'react-router-dom';
+import React from 'react'
+
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './components/Home-page';
+import { Header } from './components/Home-page/header';
 import { News } from './components/News';
 import { Profile } from './components/Profile/Profile';
 import { User } from './components/User';
-import { CATALOG, Posts } from './store/slices/catalog';
 
-export const App =()=>{
-
+export const App = () => {
   return (
     <div>
-      <Home />
-   
+      <Header />
       <Routes>
-        <Route path='/' element={<Home />} /> 
-           <Route path='/news' element={<News />}/>
-           <Route path='/profile' element={<Profile />}/>
-           <Route path='/user' element={<User />}>
-            </Route>
+        <Route path='/home' element={<Home />} />
+        <Route path='/news' element={<News />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/user' element={<User />}>
+        </Route>
       </Routes>
     </div>
   );

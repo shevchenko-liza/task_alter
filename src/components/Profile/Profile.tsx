@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Home } from "../Home-page";
 import classes from './styles.module.scss'
 
 export const Profile = () => {
     const [showHome, setShowHome] = useState(false)
     const localSignUp = localStorage.getItem("signUp")
-    const navigate = useNavigate()
-
-    const logout = () => {
-        localStorage.removeItem("signUp")
-        window.location.reload()
-    }
-    const deleteAccount = () => {
-        localStorage.clear()
-        window.location.reload()
-    }
 
     useEffect(() => {
         if (localSignUp) {
@@ -31,9 +20,9 @@ export const Profile = () => {
 
     return (
         <div className={classes.top} >
-            {showHome === true ?
+            {showHome  ?
                 <>hshdhhs</> :
-                null
+                <Home/>
             }
         </div>
     );

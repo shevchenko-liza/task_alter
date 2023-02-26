@@ -24,6 +24,9 @@ export const User = () => {
         if (localSignUp) {
             setShowHome(true)
         }
+        if (localEmail) {
+            setShow(true)
+        }
     })
 
     const handleClick = () => {
@@ -32,17 +35,17 @@ export const User = () => {
             localStorage.setItem("email", email.current.value)
             localStorage.setItem("password", password.current.value)
             localStorage.setItem("signUp", email.current.value)
-            alert("Account created successfully!!")
+            alert("Account created successfully!")
             window.location.reload()
         }
     }
 
     const handleSignIn = () => {
-        if (email.current.value == localEmail && password.current.value == localPassword) {
+        if (name.current.value == localEmail && password.current.value == localPassword) {
             localStorage.setItem("signUp", email.current.value)
             window.location.reload()
         } else {
-            alert("Please Enter valid Credential")
+            alert("UserName or Password entered incorrectly")
         }
     }
 
@@ -58,19 +61,17 @@ export const User = () => {
     return (
         <Container style={{ marginTop: '200px' }}>
             {showHome ?
-                <Box style={{ display: 'grid', margin: 'auto', width: '300px' }}>
-                    <input placeholder="Email" type='text' ref={email} />
-                    <input placeholder="Password" type='password' ref={password} />
+                <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
+                    <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
+                    <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
                     <Button variant="text" onClick={handleSignIn}>Sign In</Button>
                     <Button variant="text" onClick={logout} className="logout">LogOut</Button>
-
                     <Button variant="text" onClick={deleteAccount} className="delete">Delete</Button>
-                </Box>
-                :
-                <Box style={{ display: 'grid', margin: 'auto', width: '300px' }}>
-                    <input placeholder="Name" type='text' ref={name} />
-                    <input placeholder="Email" type='text' ref={email} />
-                    <input placeholder="Password" type='password' ref={password} />
+                </Box> :
+                <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
+                    <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
+                    <input style={{ height: '25px' }} placeholder="Email" type='text' ref={email} />
+                    <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
                     <Button variant="text" onClick={handleClick}>Sign Up</Button>
                 </Box>}
         </Container>
