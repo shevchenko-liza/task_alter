@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Home } from "../Home-page";
+import { Navigate } from "react-router";
 
 export const Profile = () => {
     const [showHome, setShowHome] = useState(false)
@@ -9,20 +9,19 @@ export const Profile = () => {
     const { t } = useTranslation()
 
     useEffect(() => {
-        if (localSignUp) {
+        if (!localSignUp) {
             setShowHome(true)
         }
-
     })
 
-    //   const history=useHistory()
-    //   const handleGoHome = () => {
-    //     history.push("/home"); // New line
-    //   };
+    // if (showHome === true) {
+    //     return <Navigate to="/" />
+    // }   
 
     return (
         <div  >
-            {showHome ?
+            {showHome ? <Navigate to="/" />
+                :
                 <Container sx={{ maxWidth: '1200px', marginTop: '130px' }}>
                     <Typography variant="subtitle2" fontSize="30px" margin='auto'  >The most popular programming languages:</Typography>
                     <Box marginTop='20px'>
@@ -55,8 +54,6 @@ export const Profile = () => {
                         <Typography variant='body1'>{t('profile.go.text')}</Typography>
                     </Box>
                 </Container>
-                :
-                <Home />
             }
         </div>
     );

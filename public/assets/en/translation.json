@@ -67,8 +67,13 @@
     },
     "buttons": {
         "button": "sign up",
-        "sign in": "sign in",
+        "sign_in": "sign in",
         "logOut": "Logout",
         "delete": "delete"
+    },
+    "form": {
+        "name": "Name",
+        "email": "Email",
+        "password": "Password"
     }
 }

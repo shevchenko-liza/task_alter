@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, InputLabel } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -16,18 +16,14 @@ export const User = () => {
     const email = useRef() as React.MutableRefObject<HTMLInputElement>
     const password = useRef() as React.MutableRefObject<HTMLInputElement>
     const [showHome, setShowHome] = useState(false)
-    const [show, setShow] = useState(false)
     const localSignUp = localStorage.getItem("signUp")
     const localEmail = localStorage.getItem("email")
     const localPassword = localStorage.getItem("password")
     const localName = localStorage.getItem("name")
 
     useEffect(() => {
-        if (localSignUp) {
+        if (!localSignUp) {
             setShowHome(true)
-        }
-        if (localEmail) {
-            setShow(true)
         }
     })
 
@@ -64,17 +60,22 @@ export const User = () => {
         <Container style={{ marginTop: '200px' }}>
             {showHome ?
                 <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
+                    <InputLabel size='small' style={{ color: 'black' }}>{t('form.name')}</InputLabel>
                     <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
-                    <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
-                    <Button variant="text" onClick={handleSignIn}>{t('buttons.sign in')}</Button>
-                    <Button variant="text" onClick={logout} className="logout">{t('buttons.logOut')}</Button>
-                    <Button variant="text" onClick={deleteAccount} className="delete">{t('buttons.delete')}</Button>
-                </Box> :
-                <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
-                    <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
+                    <InputLabel size='small' style={{ color: 'black' }}>{t('form.email')}</InputLabel>
                     <input style={{ height: '25px' }} placeholder="Email" type='text' ref={email} />
+                    <InputLabel size='small' style={{ color: 'black' }}>{t('form.password')}</InputLabel>
                     <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
                     <Button variant="text" onClick={handleClick}>{t('buttons.button')}</Button>
+                </Box> :
+                <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
+                    <InputLabel size='small' style={{ color: 'black' }}>{t('form.name')}</InputLabel>
+                    <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
+                    <InputLabel size='small' style={{ color: 'black' }}>{t('form.password')}</InputLabel>
+                    <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
+                    <Button variant="text" onClick={handleSignIn}>{t('buttons.sign_in')}</Button>
+                    <Button variant="text" onClick={logout} className="logout">{t('buttons.logOut')}</Button>
+                    <Button variant="text" onClick={deleteAccount} className="delete">{t('buttons.delete')}</Button>
                 </Box>}
         </Container>
     );

@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 
 import { AppBar, Box, Button, createTheme, ThemeProvider, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import icon from './photo/ic3.jpg'
+
 import { useTranslation } from "react-i18next";
 
 import i18next from "i18next";
-import lang from './photo/lang.jpg'
 
 const changeLanguage = (lng: string) => {
     i18next.changeLanguage(lng);
@@ -52,17 +51,12 @@ export const Header = () => {
                             {t('menu.profile')}
                         </Typography>
                     </Link>
-                    {/* <Link style={{ textDecoration: 'none', color: 'white' }} to={"/profile"}>Profile </Link>
-                        {showHome===true?
-                    <Profile/> :
-                  false
-             } */}
                     <Link style={{ textDecoration: 'none', color: 'white' }} to={"/user"}>
-                        <img src={icon} style={{ height: '30px', width: '30px' }} />
+                        <img src="photo/ic3.jpg" style={{ height: '30px', width: '30px' }} />
                     </Link>
                     <Box display='flex' flex-wrap='wrap' >
                         <Button onClick={() => setOpen(true)} >
-                            <img style={{ width: '25px', height: '25px' }} src={lang} alt='lang' />
+                            <img style={{ width: '25px', height: '25px' }} src="photo/lang.jpg" alt='lang' />
                         </Button>
                         {open && (
                             <Box display='grid' onClick={() => setOpen(false)}>
