@@ -1,10 +1,10 @@
-import { AppBar, Grid, Paper, styled, Typography, Button } from "@mui/material"
+import { Grid, Paper, styled, Typography, Button } from "@mui/material"
 import { Container } from "@mui/material";
 import React from "react";
 import { FC, useCallback, useEffect, useState } from "react"
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { CATALOG, catalogSlice, Posts } from "../../store/slices/catalog";
-import { User } from "../User";
 
 export const Delet: FC<Pick<Posts, 'id'>> = ({ id }) => {
   const dispatch = useDispatch()
@@ -20,6 +20,7 @@ export const News = () => {
   const catalog = useSelector(CATALOG)
   const [visible, setVisible] = useState(3)
   const dispatch = useDispatch()
+  const { t } = useTranslation()
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -50,11 +51,11 @@ export const News = () => {
               </Button>
               <Typography style={{ display: 'none' }} key={item.id}>{item.id}</Typography>
               <Typography >{item.id}</Typography>
-              <Typography variant="subtitle2">{item.body}</Typography>
+              <Typography variant="subtitle2" >  {item.body}</Typography>
             </Item>
           </Grid>
         ))}
-        <Button style={{ margin: '20px auto' }} onClick={Show}>Load more</Button>
+        <Button style={{ margin: '20px auto' }} onClick={Show}>{t('news.button')}</Button>
       </React.Fragment>
     );
   }

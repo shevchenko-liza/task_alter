@@ -1,0 +1,74 @@
+{
+    "home": {
+        "title": "The most visited sites",
+        "google": {
+            "name": "Google",
+            "text": "American transnational corporation as part of the Alphabet holding, investing in Internet search, cloud computing and advertising technologies."
+        },
+        "youTube": {
+            "name": "YouTube",
+            "text": "A video hosting service that provides users with video storage, delivery and display services. YouTube has become a popular video hosting and its own site in the world in terms of the number of visitors"
+        },
+        "facebook": {
+            "name": "Facebook",
+            "text": "A social network that has been operating since February 2004. It was founded by American Mark Zuckerberg mixed with a group of dorm roommates. There was a service called \"The Facebook *\" and was available only to representatives of Harvard."
+        },
+        "baidu": {
+            "name": "Baidu",
+            "text": "A Chinese company providing web services, the main of which is a search engine of the same name - the leader among Chinese search engines. Ranks fourth in the global search engine market with a share of 1.06%"
+        },
+        "wikipedia": {
+            "name": "Wikipedia",
+            "text": "A publicly available multilingual universal Internet encyclopedia with free content, implemented on the principles of a wiki. The site is owned by the American non-profit organization Wikimedia Foundation, which has 37 regional offices."
+        },
+        "yahoo": {
+            "name": "Yahoo",
+            "text": "an American company that owned the second most popular search engine in the world and provides a number of services united by the Internet portal Yahoo"
+        },
+        "amazon": {
+            "name": "Amazon",
+            "text": "American company, the largest in the world in the markets of e-commerce platforms and public cloud computing by revenue and market capitalization"
+        },
+        "twitter": {
+            "name": "Twitter",
+            "text": "An American microblogging service and social network where users post and interact with messages known as \"tweets\". Users interact with Twitter through a browser, mobile app, or API. Until April 2020, services were available via SMS."
+        },
+        "name": "Home"
+    },
+    "menu": {
+        "news": "News",
+        "profile": "Profile"
+    },
+    "news": {
+        "button": "Load more"
+    },
+    "profile": {
+        "c++": {
+            "text": "C++ is considered one of the most popular programming languages ​​today. With the help of C ++, they create games, operating systems, write programs for computers, drivers, utilities, etc."
+        },
+        "c#": {
+            "text": "C# is an object-oriented language. It is very convenient to work. The main area of ​​​​use of C # is the development of server applications or, in other words, the development of back-end solutions. Also, this language allows you to develop various system and network applications and create libraries for C ++."
+        },
+        "java": {
+            "text": "A language used to write enterprise software, develop games and mobile applications. It is constantly evolving, and over the 25 years of its existence on the market, it has been in the top 5 most popular and in-demand programming languages."
+        },
+        "javaScript": {
+            "text": "JavaScript is widely used in front-end development. It is also used to create applications on Android and iOS and server-side development. JavaScript for beginner programmers is suitable for a number of reasons:the code is executed by the browser, write it in the editor or IDE,results are quickly visible;one of the most popular languages ​​that are used in web development."
+        },
+        "python": {
+            "text": "Python is used for a wide range of tasks, from ordinary programs to the construction of neural networks."
+        },
+        "php": {
+            "text": "PHP is a widely used open source general purpose programming language. PHP is specially designed for web development and its code can be embedded directly into HTML."
+        },
+        "go": {
+            "text": "A compiled multi-threaded programming language developed internally by Google. Development of Go began in September 2007 and was directly designed by Robert Grismer, Rob Pike, and Ken Thompson, who previously worked on the Inferno operating system development project."
+        }
+    },
+    "buttons": {
+        "button": "sign up",
+        "sign in": "sign in",
+        "logOut": "Logout",
+        "delete": "delete"
+    }
+}

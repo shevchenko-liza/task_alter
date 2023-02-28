@@ -1,6 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // interface Data {
 //     name: string;
@@ -10,6 +11,7 @@ import React, { useEffect, useRef, useState } from "react";
 // }
 
 export const User = () => {
+    const { t } = useTranslation()
     const name = useRef() as React.MutableRefObject<HTMLInputElement>
     const email = useRef() as React.MutableRefObject<HTMLInputElement>
     const password = useRef() as React.MutableRefObject<HTMLInputElement>
@@ -64,15 +66,15 @@ export const User = () => {
                 <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
                     <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
                     <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
-                    <Button variant="text" onClick={handleSignIn}>Sign In</Button>
-                    <Button variant="text" onClick={logout} className="logout">LogOut</Button>
-                    <Button variant="text" onClick={deleteAccount} className="delete">Delete</Button>
+                    <Button variant="text" onClick={handleSignIn}>{t('buttons.sign in')}</Button>
+                    <Button variant="text" onClick={logout} className="logout">{t('buttons.logOut')}</Button>
+                    <Button variant="text" onClick={deleteAccount} className="delete">{t('buttons.delete')}</Button>
                 </Box> :
                 <Box style={{ display: 'grid', margin: 'auto', width: '300px', gap: '22px' }}>
                     <input style={{ height: '25px' }} placeholder="UserName" type='text' ref={name} />
                     <input style={{ height: '25px' }} placeholder="Email" type='text' ref={email} />
                     <input style={{ height: '25px' }} placeholder="Password" type='password' ref={password} />
-                    <Button variant="text" onClick={handleClick}>Sign Up</Button>
+                    <Button variant="text" onClick={handleClick}>{t('buttons.button')}</Button>
                 </Box>}
         </Container>
     );

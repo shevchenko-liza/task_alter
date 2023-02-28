@@ -9,8 +9,9 @@ import { Provider } from 'react-redux'
 
 import { store } from './store'
 
-const MOUNT_POINT = document.getElementById('root')
+import './i18n';
 
+const MOUNT_POINT = document.getElementById('root')
 try {
   if (!MOUNT_POINT) {
     throw new Error('#root mount point not found')

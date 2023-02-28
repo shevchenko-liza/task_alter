@@ -10,12 +10,17 @@
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
+        "i18next": "^22.4.10",
+        "i18next-browser-languagedetector": "^7.0.1",
+        "i18next-http-backend": "^2.1.1",
         "immer": "^9.0.19",
+        "js-cookie": "^3.0.1",
         "lodash": "^4.17.21",
         "node-sass": "^7.0.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.43.2",
+        "react-i18next": "^12.2.0",
         "react-redux": "^8.0.5",
         "react-router": "^6.8.1",
         "react-router-dom": "^6.8.1",
@@ -48,6 +53,7 @@
         ]
     },
     "devDependencies": {
+        "@types/js-cookie": "^3.0.3",
         "@types/lodash": "^4.14.191",
         "typescript-plugin-css-modules": "^4.2.2"
     }
