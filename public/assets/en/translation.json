@@ -67,7 +67,7 @@
     },
     "buttons": {
         "button": "sign up",
-        "sign_in": "sign in",
+        "signIn": "sign in",
         "logOut": "Logout",
         "delete": "delete"
     },

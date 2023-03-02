@@ -18,9 +18,9 @@ export const Home = () => {
     const { t } = useTranslation()
     return (
         <Container style={{ margin: 'auto', width: '1200px' }} >
-            <img style={{ width: '100%', height: '330px', marginTop: '72px' }} src={icon} alt="site" />
+            <img style={{ width: '100%', height: '330px', marginTop: '72px' }} src={icon} alt="mainPhoto" />
             <Typography style={{ textAlign: 'center', fontSize: '35px', marginTop: '30px' }}>{t('home.title')}</Typography>
-            <Grid container spacing={1}>
+            <Grid container spacing={1}>  
                 <Grid container item spacing={5}>
                     <React.Fragment >
                         <Grid item xs={6}>

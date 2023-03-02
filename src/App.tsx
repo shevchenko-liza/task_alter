@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 
 import { Route, Routes } from 'react-router-dom';
+
 import { Home } from './components/Home-page';
 import { Footer } from './components/Home-page/footer';
 import { Header } from './components/Home-page/header';

@@ -7,23 +7,18 @@ type ID = number | `${number}`
 export interface Posts {
     id: ID
     body: string
-
 }
 
 interface CatalogState {
     list: Posts[],
-    table: {
-        [id in ID]: Posts
-    }
 }
 
 export const catalogSlice = createSlice({
     name: 'catalog',
     initialState: {
         list: [],
-        table: {}
-    }as CatalogState,
-    
+    } as CatalogState,
+
     reducers: {
         setList(state, action: PayloadAction<Posts[]>) {
             state.list = action.payload
@@ -39,4 +34,4 @@ interface State {
 }
 
 export const CATALOG = (state: State) => state[catalogSlice.name].list
-export const CATALOG_TABLE = (state: State) => state[catalogSlice.name].table
+

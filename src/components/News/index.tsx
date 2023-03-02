@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { CATALOG, catalogSlice, Posts } from "../../store/slices/catalog";
 
+
 export const Delet: FC<Pick<Posts, 'id'>> = ({ id }) => {
   const dispatch = useDispatch()
   const handleDelete = useCallback(() => dispatch(catalogSlice.actions.unset(id)), [dispatch, id])
@@ -51,7 +52,7 @@ export const News = () => {
               </Button>
               <Typography style={{ display: 'none' }} key={item.id}>{item.id}</Typography>
               <Typography >{item.id}</Typography>
-              <Typography variant="subtitle2" >  {item.body}</Typography>
+              <Typography variant="subtitle2" >  {item.body} </Typography>
             </Item>
           </Grid>
         ))}

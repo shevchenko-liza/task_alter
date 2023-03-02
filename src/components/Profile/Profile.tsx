@@ -5,22 +5,23 @@ import { Navigate } from "react-router";
 
 export const Profile = () => {
     const [showHome, setShowHome] = useState(false)
-    const localSignUp = localStorage.getItem("signUp")
+    const [show, setShow] = useState(false)
+    const localSignIn = localStorage.getItem("signIn")
+    const localName = localStorage.getItem("name")
     const { t } = useTranslation()
-
+ 
     useEffect(() => {
-        if (!localSignUp) {
+        if (!localSignIn) {
             setShowHome(true)
+        }  if (!localName) {
+            setShow(true)
         }
     })
 
-    // if (showHome === true) {
-    //     return <Navigate to="/" />
-    // }   
-
     return (
         <div  >
-            {showHome ? <Navigate to="/" />
+            {showHome ?
+                <Navigate to="/" />
                 :
                 <Container sx={{ maxWidth: '1200px', marginTop: '130px' }}>
                     <Typography variant="subtitle2" fontSize="30px" margin='auto'  >The most popular programming languages:</Typography>
@@ -58,4 +59,3 @@ export const Profile = () => {
         </div>
     );
 }
-
