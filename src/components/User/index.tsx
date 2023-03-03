@@ -1,16 +1,11 @@
+import React, { useEffect, useRef, useState } from "react";
+
 import { Box, Button, InputLabel } from "@mui/material";
 import { Container } from "@mui/system";
-import React, { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Navigate } from "react-router";
-import { Profile } from "../Profile/Profile";
 
-// interface Data {
-//     name: string;
-//     email: string;
-//     password: string | number
-//     value: ""
-// }
+import { useTranslation } from "react-i18next";
+
+import { useNavigate } from "react-router";
 
 export const User = () => {
     const name = useRef() as React.MutableRefObject<HTMLInputElement>
@@ -22,6 +17,7 @@ export const User = () => {
     const localPassword = localStorage.getItem("password")
     const localName = localStorage.getItem("name")
     const { t } = useTranslation()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (!localSignIn) {
@@ -46,6 +42,7 @@ export const User = () => {
     const handleSignIn = () => {
         if (name.current.value == localName && password.current.value == localPassword) {
             localStorage.setItem("signIn", name.current.value)
+            navigate('/profile')
             window.location.reload()
         } else {
             alert("UserName or Password entered incorrectly")
@@ -60,10 +57,6 @@ export const User = () => {
         localStorage.clear()
         window.location.reload()
     }
-
-    // if(showHome===false){
-    //     return <Profile/>
-    // }
     return (
         <Container style={{ marginTop: '200px' }}>
             {show ?

@@ -1,6 +1,9 @@
-import { Box, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+
+import { Box, Container, Typography } from "@mui/material";
+
 import { useTranslation } from "react-i18next";
+
 import { Navigate } from "react-router";
 
 export const Profile = () => {
@@ -9,11 +12,11 @@ export const Profile = () => {
     const localSignIn = localStorage.getItem("signIn")
     const localName = localStorage.getItem("name")
     const { t } = useTranslation()
- 
+
     useEffect(() => {
         if (!localSignIn) {
             setShowHome(true)
-        }  if (!localName) {
+        } if (!localName) {
             setShow(true)
         }
     })

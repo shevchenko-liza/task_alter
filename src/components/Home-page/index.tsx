@@ -1,16 +1,18 @@
+import React from "react"
+
 import { Grid, Paper, styled, Typography, Avatar, Box } from "@mui/material"
 import { Container } from '@mui/system'
-import React from "react"
+
 import { useTranslation } from "react-i18next";
-import icon from './photo/pop_site.jpg'
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: ' 	#B0C4DE ',
+    backgroundColor: '#B0C4DE',
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '185px',
-    marginTop: '50px'
+    minHeight: '185px',
+    marginTop: '50px',
+    flex: 1,
 
 }));
 
@@ -18,9 +20,8 @@ export const Home = () => {
     const { t } = useTranslation()
     return (
         <Container style={{ margin: 'auto', width: '1200px' }} >
-            <img style={{ width: '100%', height: '330px', marginTop: '72px' }} src={icon} alt="mainPhoto" />
-            <Typography style={{ textAlign: 'center', fontSize: '35px', marginTop: '30px' }}>{t('home.title')}</Typography>
-            <Grid container spacing={1}>  
+            <Typography style={{ textAlign: 'center', fontSize: '35px', marginTop: '130px' }}>{t('home.title')}</Typography>
+            <Grid container spacing={1}>
                 <Grid container item spacing={5}>
                     <React.Fragment >
                         <Grid item xs={6}>
